@@ -12,11 +12,6 @@ class Endereco {
     private String cidade;
     private String estado;
 
-    public Endereco(String rua, String cidade, String estado){
-        this.rua = rua;
-        this.cidade = cidade;        
-        this.estado = estado;
-    }
     
     public String getRua() {
         return rua;
@@ -42,11 +37,9 @@ class Endereco {
         this.estado = estado;
     }
     
-     @Override
-    public String toString() {
-        return String.format("[Endereco]\nRua: %s, Cidade: %s, Estado: %s", 
-                getRua(), getCidade(), getEstado());
-    }
+     public void imprimirEndereco(){
+         System.out.println("Rua:" +getRua() +"Cidade:" +getCidade() +"Estado:" +getEstado());
+     }
 }
     
 
