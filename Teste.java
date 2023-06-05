@@ -1,36 +1,143 @@
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
 
 
 public class Teste {
 
     public static void main(String args[]) {
       
+    Scanner scan = new Scanner(System.in);
     
+    Curso curso;
+    ArrayList<Curso> cursos = new ArrayList<>();  
+    
+    Aluno aluno = new Aluno();
+    
+    ArrayList<Double> notas = new ArrayList();
+    
+    Telefone telefone = new Telefone();
+    ArrayList<Telefone> telefones = new ArrayList<>();
+    
+    Professor professor = new Professor();
+    
+    Endereco endereco;
+    
+    
+        System.out.println("____Cadastro Professor___");
         
-        Telefone telefone = new Telefone("Celular", "61", "81633008");
-        Telefone telefone2 = new Telefone("Casa", "55", "918239030");
+        System.out.println("Digite o nome");
+        professor.setNome(scan.nextLine());
+        System.out.println("Digite o CPF");
+        professor.setCpf(scan.nextLine());
+        System.out.println("Digite o E-mail");
+        professor.setEmail(scan.nextLine());
+        
+        endereco = new Endereco();
+        System.out.println("Digite a Rua:");
+        endereco.setRua(scan.nextLine());
+        System.out.println("Digite a Estado:");
+        endereco.setEstado(scan.nextLine());
+        System.out.println("Digite a Cidade:");
+        endereco.setCidade(scan.nextLine());
+    
+        professor.setEndereco(endereco);
+        
+        System.out.println("Digite os telefones - maximo 2 ");
+        for(int i = 0; i < 2;i++){
+            telefone = new Telefone();
+            System.out.println("Digite o numero");
+            telefone.setNumero(scan.nextLine());
+            
+            System.out.println("Digite o DDD");
+            telefone.setDdd(scan.nextLine());
+            
+            System.out.println("Digite o Tipo");
+            telefone.setTipo(scan.nextLine());
+            
+            telefones.add(telefone);
+        }
+    professor.setTelefones(telefones);
+    
+    System.out.println("Digite o Titulacao:");
+    professor.setTitulacao(scan.nextLine());
+    
+    System.out.println("Digite o Salario:");
+    professor.setSalario(scan.nextDouble());
 
-        Curso curso = new Curso("Cienca Da Computacao");
-        Curso curso1 = new Curso("Engenharia Da Computacao");
-        Curso curso2 = new Curso("Analise de Sistemas");
-        Curso curso3 = new Curso("POO");
+    System.out.println("Digite os Cursos - maximo 2 ");
+        for(int i = 0; i < 2;i++){
+            curso = new Curso();
+            System.out.println("Curso");
+            curso.setNomeC(scan.nextLine());
+            
        
-        Endereco endereco = new Endereco("Buriti", "Brasilia", "DF");
-        Endereco endereco2 = new Endereco(" 22", "Park Way", "DF");
+            cursos.add(curso);
+        }
+    professor.setCursos(cursos);
         
-        Double[] notas = { 5.5, 7.8, 6.3 };
-        Curso[] cursos = {curso, curso1, curso2, curso3};
-        Telefone[] telefones = {telefone,telefone2};
-        
-        Aluno aluno = new Aluno("Guilherme", "077.174.101.41", "guidepaula.com", endereco,new Telefone[]{telefone}, notas,curso);
-        Professor prof = new Professor("Hially", "022.245.104.32", "Hially.com", endereco2,new Telefone[]{telefone2}, "Doutorado", 4.511,cursos);
-
-        System.out.println(aluno.toString());
-        System.out.println(endereco.toString());
-        
-        System.out.println(prof.toString());
-        System.out.println(endereco2.toString());
-        
-        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
 }
