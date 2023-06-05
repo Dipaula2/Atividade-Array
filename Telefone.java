@@ -44,6 +44,6 @@ class Telefone {
 
      @Override
     public String toString() {
-        return String.format("Tipo:" +getTipo() + "DDD:"+getDdd() + "Numero:" =getNumero());
+        return String.format("Tipo:" +getTipo() + "DDD:"+getDdd() + "Numero:" +getNumero());
     }
 }
