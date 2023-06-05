@@ -12,11 +12,7 @@ class Telefone {
     private String ddd;
     private String numero;
 
-    public Telefone(String tipo, String ddd, String numero) {
-        this.tipo = tipo;
-        this.ddd = ddd;
-        this.numero = numero;
-    }
+    
 
     public String getTipo() {
         return tipo;
@@ -42,8 +38,7 @@ class Telefone {
         this.numero = numero;
     }
 
-     @Override
-    public String toString() {
-        return String.format("Tipo:" +getTipo() + "DDD:"+getDdd() + "Numero:" +getNumero());
-    }
+     public void imprimirTelefone(){
+         System.out.println("Tipo:" +getTipo() +"DDD:" +getDdd() +"Numero:" +getNumero());
+     }
 }
