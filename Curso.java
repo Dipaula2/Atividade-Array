@@ -24,9 +24,8 @@ class Curso {
         this.nome = nome;
     }
     
-   @Override
-public String toString() {
-    return String.format("" + getNomeC());
+public void imprimirCurso(){
+    System.out.println("Nome do Curso:" +getNomeC());
 }
     
 }
