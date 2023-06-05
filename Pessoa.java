@@ -1,5 +1,5 @@
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,16 +14,9 @@ public class Pessoa {
     private String nome;
     private String cpf;
     private String email;
-    private Telefone[] telefones;
+    private ArrayList<Telefone> telefones;
     private Endereco endereco;
-    
-    public Pessoa(String nome, String cpf, String email,Endereco endereco,Telefone[] telefones){
-        this.nome = nome;
-        this.cpf = cpf;        
-        this.email = email;
-        this.endereco = endereco;
-        this.telefones = telefones;
-    }
+   
     
     
 
@@ -59,24 +52,23 @@ public class Pessoa {
         this.endereco = endereco;
     }
 
-      
-
-    public Telefone[] getTelefones() {
+    public ArrayList<Telefone> getTelefones() {
         return telefones;
     }
 
-    public void setTelefones(Telefone[] telefones) {
+    public void setTelefones(ArrayList<Telefone> telefones) {
         this.telefones = telefones;
     }
-    
-        @Override
-   public String toString(){
-      return String.format("Nome:" +getNome()
-                           +" CPF:" +getCpf()
-                            +" Email: " +getEmail()
-                            +" Telefone:" +Arrays.toString(telefones)); 
-   }
-    
+
+  public void imprimir(){
+  System.out.println("Nome:" +getNome() +"CPF:" +getCpf() +"E-mail:" +getEmail());
+  
+  getEndereco().imprimirEndereco(); 
+   
+  for(int i =0; i<getTelefones().size();i++){
+    getTelefones().get(i).imprimirTelefone();
+}
+  }  
     
     
 }
