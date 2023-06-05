@@ -1,5 +1,6 @@
 
-import java.util.Arrays;
+import java.util.ArrayList;
+
 
 
 
@@ -17,15 +18,12 @@ import java.util.Arrays;
 public class Aluno extends Pessoa{
     
    private Curso curso;
-   private Double[] notas;
+   private ArrayList<Double> notas;
 
-    public Aluno(String nome, String cpf, String email, Endereco endereco, Telefone[] telefones,Double[] notas,Curso curso) {
-        super(nome, cpf, email, endereco, telefones);
-        this.curso = curso;
-        this.notas = notas;
-    }
-    
-    
+  public Aluno(){
+      super();
+  }
+  
 
     public Curso getCurso() {
         return curso;
@@ -35,26 +33,35 @@ public class Aluno extends Pessoa{
         this.curso = curso;
     }
 
-    public Double[] getNotas() {
+    public ArrayList<Double> getNotas() {
         return notas;
     }
 
-    public void setNotas(Double[] notas) {
+    public void setNotas(ArrayList<Double> notas) {
         this.notas = notas;
     }
+
     
     public double calcularMedia() {
         double soma = 0.0;
-        for (double nota : notas) {
+        for (double nota : getNotas()) {
             soma += nota;
         }
-        return soma / notas.length;
+        double media = soma/notas.size();
+       return media;
     }
     
-    @Override
-    public String toString() {
-        return String.format("[Aluno]\n" +super.toString() + " Curso:" + getCurso()+" Notas:" + Arrays.toString(notas) + " Media:" + calcularMedia() +" Curso:" + getCurso());
-    }
-    
+   @Override
+ public void imprimir(){
+        System.out.println("_______Dados do Aluno____");
+        super.imprimir();
+        getCurso().imprimirCurso();
+        
+       for(int i =0; i<getNotas().size();i++){
+           System.out.println(getNotas().get(i).toString());
+ }
+       System.out.println("Media Final:" +calcularMedia());
+   
 
+}
 }
